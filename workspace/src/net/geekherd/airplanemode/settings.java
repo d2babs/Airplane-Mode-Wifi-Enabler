@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2009 Daniel Velazco
+ * Copyright (C) 2006 The Android Open Source Project
+ * 
+ * This file is part of Airplane Mode Wifi Enabler 
+ * (http://www.danvelazco.com or http://www.geekherd.net)
+ * 
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This source code is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this source code; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
 package net.geekherd.airplanemode;
 
 
@@ -38,8 +59,8 @@ public class settings extends Activity
         
         checkbox_wifi = (CheckBox) findViewById(R.id.checkbox_wifi);
         checkbox_bt = (CheckBox) findViewById(R.id.checkbox_bt);
-        checkbox_wifi.setChecked(checkWifiActiveAirplaneMode());
-        checkbox_bt.setChecked(checkBTActiveAirplaneMode());
+        checkbox_wifi.setChecked(checkRadioSettings("wifi"));
+        checkbox_bt.setChecked(checkRadioSettings("bluetooth"));
         
         button_save = (Button) findViewById(R.id.btn_save);
         button_save.setOnClickListener(new OnClickListener() 
@@ -62,37 +83,21 @@ public class settings extends Activity
         });
     }
 
-	private boolean checkWifiActiveAirplaneMode()
-	{
-		String[] modifiedRadios = null;
-		boolean deactivate = true;
+    private boolean checkRadioSettings(String radio)
+    {
+    	String[] modifiedRadios = null;
+		boolean inactive = true;
 		String airplaneSettings = Settings.System.getString(getContentResolver(), Settings.System.AIRPLANE_MODE_RADIOS);
 		
 		modifiedRadios = airplaneSettings.split(",");
 		
 		for(int i = 0; i < modifiedRadios.length; i++){
-			if (modifiedRadios[i].equals("wifi"))
-				deactivate = false;
+			if (modifiedRadios[i].equals(radio))
+				inactive = false;
 		}
 		
-		return deactivate;
-	}
-	
-	private boolean checkBTActiveAirplaneMode()
-	{
-		String[] modifiedRadios = null;
-		boolean deactivate = true;
-		String airplaneSettings = Settings.System.getString(getContentResolver(), Settings.System.AIRPLANE_MODE_RADIOS);
-		
-		modifiedRadios = airplaneSettings.split(",");
-		
-		for(int i = 0; i < modifiedRadios.length; i++){
-			if (modifiedRadios[i].equals("bluetooth"))
-				deactivate = false;
-		}
-		
-		return deactivate;
-	}
+		return inactive;	
+    }
 	
 	
 	@Override 
