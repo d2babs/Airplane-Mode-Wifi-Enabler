@@ -40,8 +40,8 @@ public class settings extends Activity
 {
 	public final static String TAG = "AirplaneModeSettings";
 	private static final String LEAVE_WIFI_ON = "cell,bluetooth";
-	private static final String LEAVE_BT_ON = "cell,wifi";
-	private static final String LEAVE_BOTH_ON = "cell";
+//	private static final String LEAVE_BT_ON = "cell,wifi";
+//	private static final String LEAVE_BOTH_ON = "cell";
 	private static final String AIRPLANE_REGULAR = "cell,bluetooth,wifi";
 	CheckBox checkbox_wifi;
 	CheckBox checkbox_bt;
@@ -58,21 +58,15 @@ public class settings extends Activity
         		Settings.System.AIRPLANE_MODE_RADIOS));
         
         checkbox_wifi = (CheckBox) findViewById(R.id.checkbox_wifi);
-        checkbox_bt = (CheckBox) findViewById(R.id.checkbox_bt);
         checkbox_wifi.setChecked(checkRadioSettings("wifi"));
-        checkbox_bt.setChecked(checkRadioSettings("bluetooth"));
         
         button_save = (Button) findViewById(R.id.btn_save);
         button_save.setOnClickListener(new OnClickListener() 
         {
         	public void onClick(View v) {
         		
-        		if (checkbox_wifi.isChecked() && checkbox_bt.isChecked())
-        			Settings.System.putString(getContentResolver(), Settings.System.AIRPLANE_MODE_RADIOS, LEAVE_BOTH_ON);
-        		else if (checkbox_wifi.isChecked() && !checkbox_bt.isChecked())
+        		if (checkbox_wifi.isChecked())
         			Settings.System.putString(getContentResolver(), Settings.System.AIRPLANE_MODE_RADIOS, LEAVE_WIFI_ON);
-        		else if (!checkbox_wifi.isChecked() && checkbox_bt.isChecked())
-        			Settings.System.putString(getContentResolver(), Settings.System.AIRPLANE_MODE_RADIOS, LEAVE_BT_ON);
         		else
         			Settings.System.putString(getContentResolver(), Settings.System.AIRPLANE_MODE_RADIOS, AIRPLANE_REGULAR);
         		

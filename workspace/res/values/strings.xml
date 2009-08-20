@@ -38,9 +38,6 @@
 		<b>I cannot change my Wi-Fi settings while in Airplane Mode.</b>\n
 		<b>A:</b> The settings interface automatically "disables" wi-fi configuration in airplane mode. To alleviate this problem you can A) Connect to the wireless connection before going into Airplane mode. B) Install AnyCut and create a "Wi-Fi Settings" shortcut, that will let you change the configuration while in airplane mode.\n
 		\n
-		<b>I cannot change my Bluetooth settings while in Airplane Mode.</b>\n
-		<b>A:</b> Same as Wi-Fi. The settings interface automatically "disables" bluetooth configuration in airplane mode. To alleviate this problem you can A) Connect to the wireless connection before going into Airplane mode. B) Install AnyCut and create a "Bluetooth Settings" shortcut, that will let you change the configuration while in airplane mode.\n
-		\n
 		<b>Can I uninstall this Application after changing the configuration?</b>\n
 		<b>A:</b> Yes you can. The application changes the system settings and does not run in the background in any way.\n
 		\n

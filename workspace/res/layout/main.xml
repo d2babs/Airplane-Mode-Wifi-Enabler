@@ -27,22 +27,16 @@
     
 	<CheckBox 
 		android:id="@+id/checkbox_wifi"
-		android:text="@string/title_wifi"  
+		android:text="@string/title_wifi"
+		android:textSize="25dip"  
 		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content" 
-		/>
-		
-	<CheckBox 
-		android:id="@+id/checkbox_bt"
-		android:text="@string/title_bt"  
-		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content" 
-		android:layout_marginTop="10dip" 
-		/>
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5dip" />
 		
 	<Button 
 		android:id="@+id/btn_save"
-		android:text="@string/btn_save"  
+		android:text="@string/btn_save"
+		android:textSize="25dip"  
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content" 
 		android:layout_gravity="center" 
