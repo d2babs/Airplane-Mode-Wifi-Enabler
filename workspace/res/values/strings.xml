@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Airplane Mode Wi-Fi</string>
+    <string name="about_title">About</string>
+    <string name="menu_about">About / FAQ</string>
+	
+	<string name="title_wifi">Keep Wi-Fi On</string>
+	<string name="title_bt">Keep Bluetooth On</string>
+	<string name="btn_save">Save</string>
+
+	<string name="about_text">\n
+    	Developed by Daniel Velazco.\n
+		For ChangeLog and FAQ go to\n
+		http://www.danvelazco.com\n
+		\n
+		<b>FAQ</b>\n
+		\n
+		<b>I cannot change my Wi-Fi settings while in Airplane Mode.</b>\n
+		<b>A:</b> The settings interface automatically "disables" wi-fi configuration in airplane mode. To alleviate this problem you can A) Connect to the wireless connection before going into Airplane mode. B) Install AnyCut and create a "Wi-Fi Settings" shortcut, that will let you change the configuration while in airplane mode.\n
+		\n
+		<b>Can I uninstall this Application after changing the configuration?</b>\n
+		<b>A:</b> Yes you can. The application changes the system settings and does not run in the background in any way.\n
+		\n
+
+	</string>
+	
+</resources>
